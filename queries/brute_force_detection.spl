@@ -1,0 +1,4 @@
+index=main sourcetype=ssh_raw_logs status="failure"
+| stats count by src_ip dest_ip
+| where count > 100
+| sort - count
